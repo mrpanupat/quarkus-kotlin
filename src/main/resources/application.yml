@@ -1,4 +1,6 @@
 quarkus:
+  application:
+    name: quarkus-kotlin
   http:
     test-port: 8082
   management:
@@ -9,3 +11,9 @@ quarkus:
     export:
       prometheus:
         path: prometheus
+  log:
+    console:
+      format: "%d{yyyy-MM-dd'T'HH:mm:ss.SSSXXX}|2|%p|${spring.application.name:-}|%X{traceId},%X{spanId},%X{sampled},%X{X-Correlation-Id}|%i|%t|%c|%m%n"
+  otel:
+    traces:
+      sampler: parentbased_always_off
