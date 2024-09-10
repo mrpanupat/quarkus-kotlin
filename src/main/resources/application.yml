@@ -17,3 +17,6 @@ quarkus:
   otel:
     traces:
       sampler: parentbased_always_off
+
+correlation:
+  prefix: TTT
